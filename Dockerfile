@@ -1,10 +1,5 @@
-FROM scratch
-ADD centos-7-docker.tar.xz /
-
-LABEL name="CentOS Base Image" \
-    vendor="CentOS" \
-    license="GPLv2" \
-    build-date="20170510"
-
+FROM docker.io/centos:latest
+ADD hello-docker.txt /tmp
+RUN yum install -y epel-release
 CMD ["/bin/bash"]
 
